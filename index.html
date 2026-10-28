@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inside Out 2 Characters</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">Inside<span>Out 2</span></div>
+  <nav>
+    <a>Home</a>
+    <a >About</a>
+    <a >Persons</a>
+    <a >Contact</a>
+  </nav>
+  <button id="modeToggle">Dark / Light</button>
+</header>
+
+
+<div class="banner" id="home">
+  <img class="hero-img" src="hero.png" alt="Inside Out 2 hero image">
+  <div class="banner-text">
+    <h1>Meet the Emotions of Inside Out 2</h1>
+    <p>Riley is a teenager now, and new emotions have arrived at Headquarters. Meet everyone in her mind.</p>
+    <button class="btn" onclick="scrollToSection('persons')">Meet the Characters</button>
+  </div>
+</div>
+
+<section id="about">
+  <h2>About the Movie</h2>
+  <p class="sub">Riley is 13, and Headquarters is getting a major renovation. Joy, Sadness, Anger, Fear and Disgust must share the control panel with brand new emotions like Anxiety. Which emotions will help Riley the most?</p>
+</section>
+
+
+<section id="persons">
+  <h2>The Characters</h2>
+  <p class="sub">Click “View Details” on any character to know more.</p>
+  <div id="persons_list"></div>
+</section>
+
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p class="sub">Send us your favorite emotion!</p>
+  <input placeholder="Your name">
+  <input placeholder="Your email">
+</section>
+
+
+<footer>
+  <div>
+    <h3>Follow Us</h3>
+    <a href="#">Facebook</a>
+    <a href="#">Instagram</a>
+    <a href="#">YouTube</a>
+  </div>
+  <div>
+    <h3>Contact</h3>
+    <p>Headquarters, San Francisco</p>
+    <p>info@insideout2-.com</p>
+    <p>+20 100 000 0000</p>
+  </div>
+  <div>
+    <h3>Newsletter</h3>
+    <input id="newsEmail" placeholder="Your email">
+    <button class="btn" onclick="alert('Subscribed!')">Subscribe</button>
+  </div>
+</footer>
+
+<script>
+
+let persons = [
+  {name:"Joy", age:13, specialist:"Happiness & Optimism", city:"Headquarters", email:"joy@headquarters.com", bio:"The leader of Riley's emotions who always looks for the bright side of every moment.", image:"joy.jpg"},
+  {name:"Sadness", age:13, specialist:"Empathy & Comfort", city:"Headquarters", email:"sadness@headquarters.com", bio:"Gentle and caring, she helps Riley understand her feelings and connect with others.", image:"sadnessssss 1.png"},
+  {name:"Anger", age:13, specialist:"Fairness & Defense", city:"Headquarters", email:"anger@headquarters.com", bio:"Hot-headed but protective, he stands up whenever something seems unfair.", image:"anger.jpg"},
+  {name:"Fear", age:13, specialist:"Safety & Caution", city:"Headquarters", email:"fear@headquarters.com", bio:"Always ready for danger, he makes sure Riley stays safe and prepared.", image:"fear.png"},
+  {name:"Disgust", age:13, specialist:"Style & Taste", city:"Headquarters", email:"disgust@headquarters.com", bio:"Sassy and smart, she protects Riley from bad food and bad fashion.", image:"disgust 1.png"},
+  {name:"Anxiety", age:13, specialist:"Planning the Future", city:"Headquarters", email:"anxiety@headquarters.com", bio:"A new emotion who imagines every possible outcome to get Riley ready for what's next.", image:"anxiety.png"},
+  {name:"Envy", age:13, specialist:"Wanting More", city:"Headquarters", email:"envy@headquarters.com", bio:"Tiny and curious, she notices what others have and dreams of the same.", image:"Envy.jpg"},
+  {name:"Ennui", age:13, specialist:"Being Cool & Bored", city:"Headquarters", email:"ennui@headquarters.com", bio:"Relaxed and dramatic, she controls the console from a comfy phone-holding chair.", image:"Ennui.png"},
+  {name:"Embarrassment", age:13, specialist:"Shyness & Blushing", city:"Headquarters", email:"embarrassment@headquarters.com", bio:"A big, shy emotion who hides inside his hoodie when things get awkward.", image:"Embarrassment.jpg"},
+  {name:"Riley Andersen", age:13, specialist:"Hockey Player", city:"San Francisco", email:"riley@hockeycamp.com", bio:"A kind and sporty teenager who is learning who she wants to be.", image:"Riley Andersen.png"},
+  {name:"Grace", age:15, specialist:"Hockey Defender", city:"San Francisco", email:"grace@hockeycamp.com", bio:"Riley's friend and teammate, she is friendly and loves a good game.", image:"Grace.JPG"},
+  {name:"Bree", age:15, specialist:"Hockey Forward", city:"San Francisco", email:"bree@hockeycamp.com", bio:"A confident player and friend who joins Grace and Riley at hockey camp.", image:"bree.JPG"},
+  {name:"Val Ortiz", age:17, specialist:"Team Captain", city:"San Francisco", email:"val@hockeycamp.com", bio:"The older star player whom every younger camper looks up to.", image:"Val Ortiz 1.png"},
+  {name:"Lance Slashblade", age:20, specialist:"Video Game Hero", city:"Riley's Mind", email:"lance@gamerealm.com", bio:"A bold action hero from Riley's favorite game who loves to save the day.", image:"lance slashblade 1.png"},
+  {name:"Bloofy", age:5, specialist:"Cartoon Star", city:"Riley's Mind", email:"bloofy@kidstv.com", bio:"A colorful cartoon friend from Riley's childhood who loves to sing and play.", image:"bloofy 1.png"},
+  {name:"Pouchy", age:5, specialist:"Helpful Backpack", city:"Riley's Mind", email:"pouchy@kidstv.com", bio:"Bloofy's loyal backpack companion who always carries what's needed.", image:"GROUP 1.png"}
+];
+
+console.log("number of persons = " + persons.length);
+
+
+for (let i = 0; i < persons.length; i++) {
+  document.getElementById("persons_list").innerHTML += `
+    <div class="card">
+      <img class="photo" src="${persons[i].image}" alt="${persons[i].name}">
+      <h3>${persons[i].name}</h3>
+      <p class="role">${persons[i].specialist}</p>
+      <small>Age: ${persons[i].age}</small>
+      <small>City: ${persons[i].city}</small>
+      <small>${persons[i].email}</small>
+      <p class="bio">${persons[i].bio}</p>
+      <button class="btn" onclick="showDetails(${i})">View Details</button>
+    </div>
+  `;
+}
+
+
+
+</script>
+</body>
+</html>

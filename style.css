@@ -1,0 +1,167 @@
+
+:root{
+  --bg:#fff8e7;
+  --text:#2b2140;
+  --card:#ffffff;
+  --main_color_purple:#7b4fd6;
+  --main_color_yellow:#fcd516;
+}
+
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{
+  scroll-behavior:smooth
+}
+body{
+  font-family:Arial,sans-serif;
+  background:var(--bg);color:var(--text)
+}
+
+
+header{
+  display:flex;justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;gap:10px;padding:14px 5%;
+  background:var(--main_color_purple);color:#fff;
+  position:sticky;
+  top:0;
+  z-index:10
+}
+.logo{
+  font-size:22px;
+  font-weight:bold
+}
+.logo span{
+  color:var(--main_color_yellow)
+}
+nav a{
+  color:#fff;
+  text-decoration:none;
+  margin:0 10px;
+  font-weight:bold;
+  cursor:pointer
+}
+nav a:hover
+{color:var(--main_color_yellow)
+}
+#modeToggle{
+  background:var(--main_color_yellow);
+  border:none;
+  padding:8px 14px;
+  border-radius:20px;
+  font-weight:bold;
+  cursor:pointer
+}
+
+
+.banner{
+  position:relative;
+  height:480px;
+  overflow:hidden;
+  display:flex;justify-content:center
+  ;align-items:center;
+  text-align:center
+  ;color:#fff
+}
+.hero-img{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:0}
+
+.banner-text{
+  position:relative;
+  z-index:1;
+  padding:0 6%;
+  text-shadow:0 2px 8px #000
+}
+.banner h1{
+  font-size:48px;
+  margin-bottom:12px
+}
+.banner p{
+  font-size:20px;margin:0 auto 24px;max-width:600px}
+.btn{
+  background:var(--main_color_yellow);
+  color:#2b2140;border:none;
+  padding:10px 22px;border-radius:20px;
+  font-weight:bold;
+  cursor:pointer;
+  text-shadow:none}
+
+.btn:hover{
+  opacity:.85
+}
+
+
+section{
+  padding:50px 5%
+
+}
+section h2{
+  font-size:32px;margin-bottom:10px;text-align:center
+}
+section p.sub{
+  text-align:center;margin-bottom:40px}
+
+#persons_list{display:flex;flex-wrap:wrap;justify-content:center;gap:22px}
+.card{width:260px;background:var(--card);border-radius:16px;padding:16px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.15)}
+.photo{
+  width:100%;
+  height:260px;
+  border-radius:12px;
+  margin-bottom:12px;
+  display:block
+}
+.card h3{
+  margin-bottom:4px
+}
+.card .role{
+  color:var(--main_color_purple);
+  font-weight:bold;
+  margin-bottom:6px}
+.card small{
+  display:block;
+  margin-bottom:3px
+}
+.card .bio{
+  font-size:14px;
+  margin:10px 0 14px
+}
+
+#contact{
+  text-align:center
+}
+#contact input,#contact textarea{
+  display:block;
+  width:100%;
+  max-width:420px;
+  margin:8px auto;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #aaa}
+
+
+footer{
+  background:var(--main_color_purple);
+  color:#fff;
+  padding:36px 5%;
+  display:flex;
+  flex-wrap:wrap;
+  gap:30px;
+  justify-content:space-between
+}
+footer a{
+  color:var(--main_color_yellow);
+  display:block;
+  margin-bottom:6px;
+  text-decoration:none
+}
+footer input{
+  padding:8px;
+  border-radius:8px;
+  border:none;
+  margin-right:6px
+}
